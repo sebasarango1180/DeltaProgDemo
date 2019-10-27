@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+	<feature name="onlineShop"/>
+	<feature name="CategoriaDAO"/>
+	<feature name="Categoria"/>
+	<feature name="AdminCategorias"/>
+	<feature name="EliminarCategoria"/>
+	<feature name="AgregarCategoria"/>
+	<feature name="ModificarCategoria"/>
+	<feature name="Conexion"/>
+	<feature name="ConexionAntigua"/>
+	<feature name="Config"/>
+	<feature name="ConfigAntigua"/>
+	<feature name="ListarCategorias"/>
+	<feature name="ConexionNueva"/>
+	<feature name="ConfigNueva"/>
+</configuration>

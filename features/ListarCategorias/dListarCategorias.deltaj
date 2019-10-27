@@ -1,0 +1,9 @@
+delta dListarCategorias {
+
+modifies org.pl.eshopping.fop.AdminCategoria{
+
+adds public void listar(Integer id, String n, String d) {
+}
+}
+
+}

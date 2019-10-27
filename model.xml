@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="showhiddenfeatures" value="true"/>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="onlineShop">
+			<feature name="CategoriaDAO"/>
+			<feature mandatory="true" name="Categoria"/>
+			<feature name="AdminCategorias"/>
+			<feature mandatory="true" name="EliminarCategoria"/>
+			<feature mandatory="true" name="AgregarCategoria"/>
+			<feature mandatory="true" name="ModificarCategoria"/>
+			<feature name="Conexion"/>
+			<feature name="ConexionAntigua"/>
+			<feature name="Config"/>
+			<feature name="ConfigAntigua"/>
+			<feature mandatory="true" name="ListarCategorias"/>
+			<feature name="ConexionNueva"/>
+			<feature name="ConfigNueva"/>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+			<imp>
+				<var>Conexion</var>
+				<not>
+					<var>ConexionAntigua</var>
+				</not>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Config</var>
+				<not>
+					<var>ConfigAntigua</var>
+				</not>
+			</imp>
+		</rule>
+	</constraints>
+</featureModel>

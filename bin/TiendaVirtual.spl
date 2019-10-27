@@ -1,0 +1,37 @@
+SPL TiendaVirtual {
+Features = {AdminCategorias, AgregarCategoria, ModificarCategoria, EliminarCategoria, Categoria,
+CategoriaDAO, Conexion, ConexionAntigua, Config, ConfigAntigua}
+Deltas = {dAdminCategorias, dAgregarCategoria, dModificarCategoria, dEliminarCategoria, dCategoria,
+dCategoriaDAO, dConexion, dConexionAntigua, dConfig, dConfigAntigua}
+Constraints {
+}
+Partitions {
+{dAdminCategorias} when (AdminCategorias);
+{dAdminCategorias, dCategoriaDAO, dAgregarCategoria} when (AgregarCategoria);
+{dAdminCategorias, dCategoriaDAO, dModificarCategoria} when (ModificarCategoria);
+{dAdminCategorias, dCategoriaDAO, dEliminarCategoria} when (EliminarCategoria);
+{dCategoria} when (Categoria);
+{dCategoriaDAO} when (CategoriaDAO);
+{dConexion} when (Conexion);
+{dConexionAntigua} when (ConexionAntigua);
+{dConexionNueva} when (ConexionNueva);
+{dConfig} when (Config);
+{dConfigAntigua} when (ConfigAntigua);
+{dConfigNueva} when (ConfigNueva);
+}
+
+Products {
+tienda_completa_v10 = {AdminCategorias, AgregarCategoria,
+ModificarCategoria, EliminarCategoria, Categoria,
+CategoriaDAO, ConexionAntigua, ConfigAntigua, ListarCategorias};
+tienda_completa_v11 = {AdminCategorias,
+AgregarCategoria, ModificarCategoria, EliminarCategoria,
+Categoria, CategoriaDAO, Conexion, Config, ListarCategorias};
+tienda_minima_v11 = {AgregarCategoria,
+ModificarCategoria, EliminarCategoria, Categoria, Conexion,
+Config, ListarCategorias};
+tienda_completa_v12 = {AdminCategorias,
+AgregarCategoria, ModificarCategoria, EliminarCategoria,
+Categoria, CategoriaDAO, ListarCategorias, ConexionNueva, ConfigNueva};
+}
+}
